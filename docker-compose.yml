@@ -53,6 +53,14 @@ services:
     volumes:
       - ../../data/dictionary.txt:/data/dictionary.txt
 
+  uploader-backend:
+    build: ../../backend/URBinLAB-backend/uploader
+    container_name: uploader-backend
+    ports:
+      - "7000:7000"
+    volumes:
+      - ../../data/uploads:/data/uploads
+
   elastic-search:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.3
     container_name: elastic-search
