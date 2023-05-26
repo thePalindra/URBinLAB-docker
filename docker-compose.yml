@@ -61,6 +61,12 @@ services:
     volumes:
       - ../../data/uploads:/data/uploads
 
+  authenticator-backend:
+    build: ../../backend/URBinLAB-backend/authentication
+    container_name: authenticator-backend
+    ports:
+      - "6000:6000"
+
   elastic-search:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.3
     container_name: elastic-search
